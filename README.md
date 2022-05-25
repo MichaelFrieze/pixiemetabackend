@@ -1,3 +1,20 @@
+# Visit the dev deployment
+
+[Pixie Meta's Strapi CMS on Railway](https://pixiemetabackend-develop.up.railway.app/admin)
+
+# Running this locally
+
+I like having a development deployment on something like Railway rather than running this locally.
+Railway can watch the development branch and automatically deploy any changes.
+The production deployment can watch the main branch.
+
+If you do want to run this locally:
+
+- open the `config/database.js` file
+- comment out the postgres connection
+- uncomment the local sqlite connection
+- save the file
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
