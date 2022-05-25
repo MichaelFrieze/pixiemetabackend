@@ -1,3 +1,22 @@
+> Please use the "develop" branch for development.
+
+[This is a link to the current dev deployment on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
+
+# Running this locally
+
+- open the `config/database.js` file
+- comment out the postgres connection
+- uncomment the local sqlite connection
+- save the file
+
+> make sure you don't push any code until you change back the `config/database.js` file.
+
+Next, create a copy of the `.env.example` file and rename it to `.env`.
+
+Fill out the `.env` file with the correct values for your local development environment.
+
+Then, follow the rest of the documentation that Strapi provided below in this README.
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
@@ -7,9 +26,13 @@ Strapi comes with a full featured [Command Line Interface](https://docs.strapi.i
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
 ```
+
 npm run develop
+
 # or
+
 yarn develop
+
 ```
 
 ### `start`
@@ -17,9 +40,13 @@ yarn develop
 Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
 
 ```
+
 npm run start
+
 # or
+
 yarn start
+
 ```
 
 ### `build`
@@ -27,9 +54,13 @@ yarn start
 Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
 ```
+
 npm run build
+
 # or
+
 yarn build
+
 ```
 
 ## ⚙️ Deployment
@@ -55,3 +86,7 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+```
+
+```
