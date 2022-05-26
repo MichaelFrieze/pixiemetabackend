@@ -1,4 +1,4 @@
-[This is a link to the current dev deployment on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
+[This is a deployment of the develop branch on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
 
 > NOTE: we have a "develop" branch.
 
