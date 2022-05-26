@@ -1,6 +1,6 @@
-> Please use the "develop" branch for development.
-
 [This is a link to the current dev deployment on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
+
+> NOTE: we have a "develop" branch that the dev deployment watches.
 
 # Running this locally
 
@@ -9,7 +9,7 @@
 - uncomment the local sqlite connection
 - save the file
 
-> make sure you don't push any code until you change back the `config/database.js` file.
+> Make sure you don't push any code until you change back the `config/database.js` file.
 
 Next, create a copy of the `.env.example` file and rename it to `.env`.
 
