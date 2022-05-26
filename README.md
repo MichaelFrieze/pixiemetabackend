@@ -1,8 +1,34 @@
 [This is a link to the current dev deployment on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
 
-> NOTE: we have a "develop" branch that the dev deployment watches.
+> NOTE: we have a "develop" branch.
 
-# Running this locally
+# Running this locally with PostgreSQL
+
+Create a copy of the `.env.example` file and rename it to `.env`.
+
+Fill out the `.env` file with the correct values for your local development environment.
+
+You will need:
+
+```
+APP_KEYS=
+API_TOKEN_SALT=
+ADMIN_JWT_SECRET=
+JWT_SECRET=
+PGDATABASE=
+PGHOST=
+PGPASSWORD=
+PGPORT=
+PGUSER=
+```
+
+You might have to ask for these values.
+
+Also, you can replace the postgres values with your own local database if you want.
+
+Then, follow the rest of the documentation that Strapi provided below in this README.
+
+# Or, you can run this locally with SQLite
 
 - open the `config/database.js` file
 - comment out the postgres connection
@@ -13,7 +39,18 @@
 
 Next, create a copy of the `.env.example` file and rename it to `.env`.
 
-Fill out the `.env` file with the correct values for your local development environment.
+Fill out the `.env` file with the correct values for your local development environment. You can remove the postgres values.
+
+You will need:
+
+```
+APP_KEYS=
+API_TOKEN_SALT=
+ADMIN_JWT_SECRET=
+JWT_SECRET=
+```
+
+You might have to ask for these values.
 
 Then, follow the rest of the documentation that Strapi provided below in this README.
 
