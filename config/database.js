@@ -20,6 +20,18 @@ module.exports = ({ env }) => ({
       user: env("PGUSER", "strapi"),
       password: env("PGPASSWORD", "password"),
       ssl: env.bool(true),
+
+      // Trying some settings to prevent connection errors I am getting on Railway
+      acquireConnectionTimeout: 5000,
+      pool: {
+        min: 0,
+        max: 10,
+        createTimeoutMillis: 8000,
+        acquireTimeoutMillis: 8000,
+        idleTimeoutMillis: 8000,
+        reapIntervalMillis: 1000,
+        createRetryIntervalMillis: 100,
+      },
     },
   },
 });
