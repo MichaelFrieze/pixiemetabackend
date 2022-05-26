@@ -1,7 +1,5 @@
 [This is a deployment of the develop branch on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
 
-> NOTE: we have a "develop" branch.
-
 # Running this locally with PostgreSQL
 
 Create a copy of the `.env.example` file and rename it to `.env`.
