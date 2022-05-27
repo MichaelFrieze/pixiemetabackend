@@ -1,6 +1,4 @@
-[This is a deployment of the develop branch on Railway.](https://pixiemetabackend-develop.up.railway.app/admin)
-
-> NOTE: we have a "develop" branch.
+[This is a deployment of the develop branch on Railway.](https://pixiemetabackend-supabase.up.railway.app/)
 
 # Running this locally with PostgreSQL
 
@@ -22,7 +20,7 @@ PGPORT=
 PGUSER=
 ```
 
-You might have to ask for these values.
+You will have to get access to these values.
 
 Also, you can replace the postgres values with your own local database if you want.
 
@@ -50,7 +48,7 @@ ADMIN_JWT_SECRET=
 JWT_SECRET=
 ```
 
-You might have to ask for these values.
+You will have to get access to these values.
 
 Then, follow the rest of the documentation that Strapi provided below in this README.
 
