@@ -15,4 +15,26 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  redis: {
+    config: {
+      connections: {
+        default: {
+          connection:
+            "rediss://:31562cfc3add43a6afa9ab82075c9538@global-better-raptor-30333.upstash.io:30333",
+        },
+      },
+    },
+  },
+  "rest-cache": {
+    config: {
+      provider: { name: "redis" },
+      strategy: {
+        contentTypes: [
+          { contentType: "api::blog-post.blog-post", hitpass: false },
+          { contentType: "api::team-member.team-member", hitpass: false },
+        ],
+        // debug: true,
+      },
+    },
+  },
 });
