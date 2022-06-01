@@ -8,7 +8,10 @@ module.exports = ({ env }) => ({
       database: env("PGDATABASE", "strapi"),
       user: env("PGUSER", "strapi"),
       password: env("PGPASSWORD", "password"),
-      ssl: env("DATABASE_SSL", false),
+      ssl: {
+        rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
+      },
     },
+    debug: false,
   },
 });

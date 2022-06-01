@@ -19,8 +19,7 @@ module.exports = ({ env }) => ({
     config: {
       connections: {
         default: {
-          connection:
-            "rediss://:31562cfc3add43a6afa9ab82075c9538@global-better-raptor-30333.upstash.io:30333",
+          connection: env("UPSTASH_REDIS_URL"),
         },
       },
     },
