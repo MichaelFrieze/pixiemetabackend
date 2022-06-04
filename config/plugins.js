@@ -15,4 +15,25 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  redis: {
+    config: {
+      connections: {
+        default: {
+          connection: env("UPSTASH_REDIS_URL"),
+        },
+      },
+    },
+  },
+  "rest-cache": {
+    config: {
+      provider: { name: "redis" },
+      strategy: {
+        contentTypes: [
+          { contentType: "api::blog-post.blog-post", hitpass: false },
+          { contentType: "api::team-member.team-member", hitpass: false },
+        ],
+        // debug: true,
+      },
+    },
+  },
 });
