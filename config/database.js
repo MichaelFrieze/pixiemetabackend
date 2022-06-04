@@ -1,34 +1,36 @@
 const path = require("path");
 
-module.exports = ({ env }) => ({
-  connection: {
-    client: "sqlite",
-    connection: {
-      filename: path.join(
-        __dirname,
-        "..",
-        env("DATABASE_FILENAME", ".tmp/data.db")
-      ),
-    },
-    useNullAsDefault: true,
-  },
-});
+module.exports = ({ env }) => {
+  if (env("NODE_ENV") === "production") {
+    return {
+      connection: {
+        client: "postgres",
+        connection: {
+          host: env("DATABASE_HOST", "127.0.0.1"),
+          port: env.int("DATABASE_PORT", 5432),
+          database: env("DATABASE_NAME", "strapi"),
+          user: env("DATABASE_USERNAME", "strapi"),
+          password: env("DATABASE_PASSWORD", "strapi"),
+          ssl: {
+            rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false),
+          },
+        },
+        debug: false,
+      },
+    };
+  }
 
-// Use this if you want to connect to a PostgreSQL database in development
-// You will have to add these values to your .env file: PGDATABASE, PGHOST, PGPASSWORD, PGPORT, and PGUSER
-// module.exports = ({ env }) => ({
-//   connection: {
-//     client: "postgres",
-//     connection: {
-//       host: env("PGHOST", "127.0.0.1"),
-//       port: env.int("PGPORT", 5432),
-//       database: env("PGDATABASE", "strapi"),
-//       user: env("PGUSER", "strapi"),
-//       password: env("PGPASSWORD", "password"),
-//       ssl: {
-//         rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
-//       },
-//     },
-//     debug: false,
-//   },
-// });
+  return {
+    connection: {
+      client: "sqlite",
+      connection: {
+        filename: path.join(
+          __dirname,
+          "..",
+          env("DATABASE_FILENAME", ".tmp/data.db")
+        ),
+      },
+      useNullAsDefault: true,
+    },
+  };
+};
