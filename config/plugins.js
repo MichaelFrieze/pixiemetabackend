@@ -26,12 +26,16 @@ module.exports = ({ env }) => ({
   },
   "rest-cache": {
     config: {
-      provider: { name: "redis" },
+      provider: {
+        name: "redis",
+      },
       strategy: {
         contentTypes: [
           { contentType: "api::blog-post.blog-post", hitpass: false },
           { contentType: "api::team-member.team-member", hitpass: false },
         ],
+        // 60000 = 1 minute, 3600000 = 1 hour, 86400000 = 1 day, 604800000 = 1 week,
+        maxAge: 86400000,
         // debug: true,
       },
     },
