@@ -15,6 +15,10 @@ module.exports = ({ env }) => {
             rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false),
           },
         },
+        pool: {
+          min: 0,
+          max: 6,
+        },
         debug: false,
       },
     };
